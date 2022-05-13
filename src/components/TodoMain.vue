@@ -97,6 +97,7 @@ export default class TodoMain extends Vue {
   border-bottom-left-radius: 3em;
   border-bottom-right-radius: 3em;
   overflow: auto;
+  flex-grow: 1;
 }
 
 .bb {

@@ -16,7 +16,7 @@ export default class Footer extends Vue {}
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 10vh;
+  min-height: 10vh;
 
   .foot-info {
     font-size: 1.2rem;
