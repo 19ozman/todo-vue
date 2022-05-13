@@ -18,11 +18,13 @@
       </div>
     </div>
   </div>
-  <EditModal
-    v-if="isModalVisible"
-    :thisTodo="this.currentEdit"
-    @close="closeModal"
-  />
+  <Transition name="modal-fade">
+    <EditModal
+      v-if="isModalVisible"
+      :thisTodo="this.currentEdit"
+      @close="closeModal"
+    />
+  </Transition>
 </template>
 
 <script lang="ts">
@@ -74,7 +76,6 @@ export default class TodoMain extends Vue {
 
   delTodo(itemID: string) {
     this.todos = this.todos.filter((object) => {
-      location.reload();
       return object.id !== itemID;
     });
   }
@@ -85,14 +86,6 @@ export default class TodoMain extends Vue {
       todo.done = !todo.done;
     }
   }
-
-  // sortTodo(sort: Date) {
-  //   this.todos.sort(function (a, b) {
-  //     let dateA = new Date(sort).getTime();
-  //     let dateB = new Date(sort).getTime();
-  //     return dateA < dateB ? 1 : -1; // ? -1 : 1 for ascending/increasing order
-  //   });
-  // }
 }
 </script>
 
@@ -129,7 +122,7 @@ export default class TodoMain extends Vue {
   display: flex;
   justify-content: space-evenly;
   background-color: var(--white);
-  min-width: 15vw;
+  min-width: 12vw;
   align-items: center;
   margin-left: 0.4vw;
 }
@@ -183,12 +176,28 @@ export default class TodoMain extends Vue {
   opacity: 0.7;
 }
 
+.modal-fade-enter-from,
+.modal-fade-leave-to {
+  opacity: 0;
+}
+
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+@media (min-width: 375px) and (max-width: 424px) {
+  .btn-wrap {
+    width: 4.5vw;
+  }
+}
+
 @media (min-width: 768px) {
   .bb {
     width: 80vw;
   }
   .btn-wrap {
-    min-width: 7.5vw;
+    min-width: 6vw;
   }
 }
 
@@ -197,7 +206,7 @@ export default class TodoMain extends Vue {
     width: 45vw;
   }
   .btn-wrap {
-    min-width: 5.5vw;
+    min-width: 4vw;
   }
 }
 
@@ -206,7 +215,7 @@ export default class TodoMain extends Vue {
     width: 45vw;
   }
   .btn-wrap {
-    min-width: 3.5vw;
+    min-width: 2.5vw;
   }
 }
 </style>

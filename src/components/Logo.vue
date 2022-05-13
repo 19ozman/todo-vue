@@ -28,7 +28,6 @@ export default class Logo extends Vue {}
     text-transform: uppercase;
     letter-spacing: 2rem;
     text-indent: 2rem;
-
     color: var(--signal);
   }
 }
