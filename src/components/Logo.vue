@@ -19,6 +19,7 @@ export default class Logo extends Vue {}
 <style scoped lang="scss">
 .title-cnt {
   display: flex;
+  justify-content: center;
   width: 100vw;
 
   .title {

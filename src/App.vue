@@ -32,11 +32,15 @@ export default class App extends Vue {}
 }
 
 * {
-  margin: 0 auto;
   box-sizing: border-box;
   scroll-behavior: smooth;
   background-color: var(--black);
   font-size: 62.5%;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+body {
+  overflow: auto;
 }
 
 #app {
