@@ -63,8 +63,7 @@ export default class TodoMain extends Vue {
   }
 
   closeModal(id: string) {
-    if ((this.currentEdit = this.todos.find((obj) => obj.id === id))) {
-    }
+    this.currentEdit = this.todos.find((obj) => obj.id === id);
 
     this.isModalVisible = !this.isModalVisible;
   }
