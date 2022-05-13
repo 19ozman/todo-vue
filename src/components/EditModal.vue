@@ -47,6 +47,12 @@ export default class EditModal extends Vue {
   overflow: scroll;
   height: 15vh;
   width: 95vw;
+  overflow-y: auto;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
 }
 
 .modal-wrap {
@@ -55,6 +61,12 @@ export default class EditModal extends Vue {
   height: 12vh;
   background-color: var(--white);
   margin: 0;
+  overflow-y: auto;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
 }
 
 .edit-todo {
@@ -73,6 +85,12 @@ export default class EditModal extends Vue {
   overflow: scroll;
   margin: 0;
   margin-left: 2rem;
+  overflow-y: auto;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
 }
 
 .edit-todo:focus {
@@ -86,6 +104,13 @@ export default class EditModal extends Vue {
   height: 12vh;
   width: 5vw;
   margin: 0;
+  scrollbar-width: none;
+  overflow-y: auto;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
 }
 
 .btn-close {

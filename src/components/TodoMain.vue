@@ -93,11 +93,15 @@ export default class TodoMain extends Vue {
 .todo-wrap {
   display: flex;
   flex-direction: column;
-  // height: 57.6vh;
+  height: 57.6vh;
   border-bottom-left-radius: 3em;
   border-bottom-right-radius: 3em;
-  overflow: auto;
-  flex-grow: 1;
+  overflow-y: auto;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
 }
 
 .bb {

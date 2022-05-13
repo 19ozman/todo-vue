@@ -37,8 +37,11 @@ export default class App extends Vue {}
   scroll-behavior: smooth;
   background-color: var(--black);
   font-size: 62.5%;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
+
+// body::-webkit-scrollbar {
+//   display: none;
+// }
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
